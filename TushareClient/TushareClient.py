@@ -19,6 +19,6 @@ class Client(object):
     @synchronized
     def __get__(cls, *args, **kwargs):
         if cls.instance is None:
-            with open('../TushareClient/token.txt') as tokenFile:
+            with open('token.txt') as tokenFile:
                 cls.instance = ts.pro_api(tokenFile.readline())
         return cls.instance
